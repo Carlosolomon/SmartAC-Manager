@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TcpMainActivity">
+
+
+
+    <!-- ScrollView to wrap all scrollable content -->
+    <ScrollView
+        android:id="@+id/scrollViewcontent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/testView2"
+                android:layout_width="196dp"
+                android:layout_height="55dp"
+                android:text="Client "
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="45sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvRecTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <EditText
+                android:id="@+id/etServerPort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Server Port"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/btnClientConnect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etServerName"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <Button
+                android:id="@+id/discButton"
+                android:layout_width="208dp"
+                android:layout_height="46dp"
+                android:text="Disconnect"
+                android:textAlignment="center"
+                android:textColorLink="#673AB7"
+                android:textSize="22sp"
+                app:iconSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnClientConnect"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_wrapBehaviorInParent="included" />
+
+            <Button
+                android:id="@+id/Wifi"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="WiFi"
+                android:textAlignment="center"
+                android:textColorLink="#673AB7"
+                android:textSize="15sp"
+                app:iconSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/divider"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintVertical_bias="0.03"
+                app:layout_wrapBehaviorInParent="included" />
+
+            <Button
+                android:id="@+id/serverList"
+                android:layout_width="85dp"
+                android:layout_height="55dp"
+                android:text="ESPs"
+                android:textAlignment="center"
+                android:textColorLink="#673AB7"
+                android:textSize="15sp"
+                app:iconSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.003"
+
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.988"
+                app:layout_wrapBehaviorInParent="included" />
+
+            <Button
+                android:id="@+id/btnClientConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect to Server"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/discButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etServerPort"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <EditText
+                android:id="@+id/etServerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Server Ip"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/etServerPort"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSendData"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <EditText
+                android:id="@+id/MessageFromClient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Write your message"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/btnSendData"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRecTxt"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <TextView
+                android:id="@+id/tvRecTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No message from Server"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@+id/MessageFromClient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/testView2"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <TextView
+                android:id="@+id/ServerReceivedData"
+                android:layout_width="330dp"
+                android:layout_height="47dp"
+                android:text="Received data"
+                android:textAlignment="center"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/MessageFromServer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnStopServer"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_wrapBehaviorInParent="included" />
+
+            <Button
+                android:id="@+id/btnSendData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/etServerName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MessageFromClient"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <EditText
+                android:id="@+id/MessageFromServer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Server Message"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvServerPort"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ServerReceivedData"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <Button
+                android:id="@+id/btnServerSend"
+                android:layout_width="115dp"
+                android:layout_height="42dp"
+                android:text="Send "
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvServerName"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <!--
+      <Button
+          android:id="@+id/btnSwitchUi"
+          android:layout_width="wrap_content"
+          android:layout_height="42dp"
+          android:text="Switch Page"
+          android:textSize="16sp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+
+          app:layout_constraintLeft_toRightOf="@id/btnServerSend"
+          app:layout_constraintTop_toBottomOf="@+id/tvServerName"
+          app:layout_constraintVertical_bias="0.5" />
+          -->
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Wifi"
+                app:layout_constraintVertical_bias="0.5" />
+
+
+           <TextView
+               android:id="@+id/textView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Server"
+               android:textColor="#0524EB"
+               android:textSize="22sp"
+               app:layout_constraintBottom_toTopOf="@+id/btnStartServer"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.5"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/divider"
+               app:layout_constraintVertical_bias="0.5" />
+
+           <Button
+               android:id="@+id/btnStartServer"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:shadowColor="#FFC107"
+               android:text="START SERVER"
+               android:textColor="#FBFBFB"
+               android:textColorHighlight="#7AC328"
+               android:textColorHint="#27C12C"
+               android:textColorLink="#29F010"
+               android:textSize="16sp"
+               app:layout_constraintBottom_toTopOf="@+id/btnStopServer"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.5"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/textView"
+               app:layout_constraintVertical_bias="0.5"
+               app:rippleColor="#E91E63"
+               app:strokeColor="#009688" />
+
+           <Button
+               android:id="@+id/btnStopServer"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="STOP SERVER"
+               android:textColor="#F4A4A4"
+               android:textSize="16sp"
+               app:layout_constraintBottom_toTopOf="@+id/ServerReceivedData"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.5"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/btnStartServer"
+               app:layout_constraintVertical_bias="0.5" />
+
+           <TextView
+               android:id="@+id/tvServerName"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Server IP"
+               android:textSize="16sp"
+               app:layout_constraintBottom_toTopOf="@+id/btnServerSend"
+               app:layout_constraintEnd_toStartOf="@+id/tvServerStatus"
+               app:layout_constraintHorizontal_bias="0.086"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/tvServerPort"
+               app:layout_constraintVertical_bias="0.5" />
+
+           <TextView
+               android:id="@+id/tvServerPort"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Server Port"
+               android:textSize="16sp"
+               app:layout_constraintBottom_toTopOf="@+id/tvServerName"
+               app:layout_constraintEnd_toStartOf="@+id/tvServerStatus"
+               app:layout_constraintHorizontal_bias="0.5"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/MessageFromServer"
+               app:layout_constraintVertical_bias="0.5" />
+
+           <TextView
+               android:id="@+id/tvServerStatus"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="No Connection yet"
+               android:textSize="16sp"
+               app:layout_constraintBottom_toTopOf="@+id/btnServerSend"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.5"
+               app:layout_constraintStart_toEndOf="@+id/tvServerPort"
+               app:layout_constraintTop_toBottomOf="@+id/MessageFromServer"
+               app:layout_constraintVertical_bias="0.5" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </ScrollView>
+
+
+   <FrameLayout
+       android:id="@+id/bottom_framelayout"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent">
+
+   </FrameLayout>
+
+   <com.google.android.material.bottomnavigation.BottomNavigationView
+       android:id="@+id/bottomNavigationView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:menu="@menu/bottom_nav_menu"
+       />
+
+   <include
+       layout="@layout/status_indicators"
+       android:id="@+id/globalConnectionStatus"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="8dp"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentEnd="true"
+       />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

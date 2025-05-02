@@ -1,0 +1,422 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- AC Configuration Header (Dropdown Toggle) -->
+        <TextView
+            android:id="@+id/ac_config_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number of ACs ▼"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- AC Configuration Section (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/ac_config_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/setup_editText_ac_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Number of ACs? Imam side"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/setup_editText_ac_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="ACs (Left)"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/setup_editText_ac_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="ACs (Right)"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/setup_editText_ac_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ACs (Down)"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- City Selection -->
+        <Spinner
+            android:id="@+id/city_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- AC Brand Selection -->
+        <Spinner
+            android:id="@+id/ac_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Prayer Scheduling Header (Dropdown Toggle) -->
+        <TextView
+            android:id="@+id/prayer_config_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prayer Scheduling ▼"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <Switch
+            android:id="@+id/testmode_swtichDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Mode"
+            />
+
+        <Switch
+            android:id="@+id/testmode_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Mode with test data"
+            />
+
+        <!-- Prayer Scheduling Section (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/prayer_config_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_system_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="System Time: 00:00:00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="16dp"
+                android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:shadowColor="#80000000"
+                android:background="@drawable/clock_border"
+                />
+
+            <TextView
+                android:id="@+id/tv_esp_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="ESP Time: 00:00:00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="16dp"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:shadowColor="#80000000"
+                android:background="@drawable/clock_border"
+                />
+
+
+
+
+
+            <!-- Fajr -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fajr"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/edit_fajr_before"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes before"
+                    android:inputType="number"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_fajr_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="--:--"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <EditText
+                    android:id="@+id/edit_fajr_after"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes after"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- Dhuhr -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dhuhr"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/edit_dhuhr_before"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes before"
+                    android:inputType="number"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_dhuhr_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="--:--"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <EditText
+                    android:id="@+id/edit_dhuhr_after"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes after"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- Asr -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asr"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/edit_asr_before"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes before"
+                    android:inputType="number"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_asr_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="--:--"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <EditText
+                    android:id="@+id/edit_asr_after"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes after"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- Maghrib -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Maghrib"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/edit_maghrib_before"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes before"
+                    android:inputType="number"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_maghrib_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="--:--"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <EditText
+                    android:id="@+id/edit_maghrib_after"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes after"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- Isha -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Isha"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/edit_isha_before"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes before"
+                    android:inputType="number"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_isha_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="--:--"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <EditText
+                    android:id="@+id/edit_isha_after"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Minutes after"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Show Prayer Times Button
+        <Button
+            android:id="@+id/btn_prayer_times"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Prayer Times"
+            android:layout_marginTop="16dp" /> -->
+        <Button
+            android:id="@+id/btn_send_30_day_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send 30-Day Prayer Schedule"
+            android:layout_marginTop="12dp"
+            />
+
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Confirm Button -->
+        <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>

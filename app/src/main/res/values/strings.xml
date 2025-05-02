@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Smart Mosque 3.31</string>
+
+    <!-- AC Brands Spinner -->
+    <string-array name="ac_brands">
+        <item>LG</item>
+        <item>Samsung</item>
+        <item>Carrier</item>
+        <item>Gree</item>
+        <item>Mitsubishi Electric</item>
+        <item>Daikin</item>
+        <item>YORK</item>
+    </string-array>
+
+    <!-- City Spinner -->
+    <string-array name="city_list">
+        <item>Riyadh</item>
+        <item>Jeddah</item>
+        <item>Mecca</item>
+    </string-array>
+
+</resources>

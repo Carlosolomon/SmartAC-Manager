@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/connectionIndicator"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:layout_gravity="end|top"
+    android:orientation="horizontal"
+    android:background="#88000500"
+    android:layout_margin="8dp"
+    android:elevation="10dp"
+    android:gravity="center"
+    android:alpha="0.45"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true">
+
+    <ImageView
+        android:id="@+id/wifiStatusIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/baseline_wifi_24"
+        android:tint="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/tcpStatusIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/baseline_cloud_24"
+        android:tint="@android:color/white" />
+
+</LinearLayout>

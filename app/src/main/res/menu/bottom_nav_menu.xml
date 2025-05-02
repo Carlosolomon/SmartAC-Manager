@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/setupy"
+        android:title="Setup"
+        android:icon="@drawable/baseline_settings_24" />
+
+    <item
+        android:id="@+id/homey"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24" />
+    <item
+        android:id="@+id/connectiony"
+        android:title="Connection"
+        android:icon="@drawable/baseline_wifi_green_24"
+        />
+
+
+
+</menu>
